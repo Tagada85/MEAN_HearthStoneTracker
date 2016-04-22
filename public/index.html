@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html ng-app="hsTracker">
+	<head>
+		<base href="/">
+
+		<title>HearthStone Tracker</title>
+
+		<meta charset="utf-8">
+		 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/styles.css">
+
+		<script src="libs/angular/angular.js"></script>
+    	<script src="libs/angular-route/angular-route.js"></script>
+
+    	<script src="./app.js"></script>
+    	<script src="./appRoutes.js"></script>
+    	<script src="./controllers/decksCtrl.js"></script>
+    	<script src="./controllers/statsCtrl.js"></script>
+    	<script src="./controllers/gameCtrl.js"></script>
+    	<script src="./controllers/loginCtrl.js"></script>
+
+
+	</head>
+	<body ng-controller="loginCtrl">
+		<header>
+			<div class="nav-left">
+				<a href="/">
+					<img src="img/logo.png">
+				</a>
+			</div>
+			<!-- If the user is logged in -->
+
+			<nav>
+				<ul class="navigation">
+					<div id="logged-in">
+						<li>
+							<a href="/">Home</a>
+						</li>
+						<li>
+							<a href="/stats" >Stats</a>
+						</li>
+						<li>
+							<a href="/decks">Decks</a>
+						</li>
+						<li>
+						<a href="http://www.damiencosset.com/contact.html">Contact</a>
+					</li>
+					</div>
+
+					<!-- If not logged in, show these -->
+					<div id="logged-out">
+						<li>
+							<a href="/login">Log In</a>
+						</li>
+						<li>
+							<a href="/signup">Sign Up</a>
+						</li>
+						<li>
+							<a href="http://www.damiencosset.com/contact.html">Contact</a>
+						</li>
+					</div>
+
+
+				</ul>
+			</nav>
+
+
+				<span id="logoutBtn">
+					<span class="username">You are connected as {{userSession.username}}</span>
+					<input type="submit" class="logout" value="Log Out" ng-click="logout()">
+				</span>
+
+
+
+		</header>
+
+
+		<a href='/new_game' class='btn game-btn' id="gameBtn">+ Add New Game</a>
+
+
+		<div ng-view></div>
+
+		<footer>
+			<p>Contact Me:</p>
+			<ul class="contact-info">
+				<li>
+					<a href="http://twitter.com/DamCosset"><i class="fa fa-twitter fa-3x"></i></a>
+				</li>
+				<li><a href="https://github.com/Tagada85"><i class="fa fa-github fa-3x"></i></a>
+				</li>
+				<li>
+					<a href="mailto:dcosset@hotmail.fr"><i class="fa fa-envelope fa-3x"></i></a>
+				</li>
+			</ul>
+		</footer>
+
+
+	</body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "name": "mean_hstracker",
+  "version": "1.0.0",
+  "description": "HearthStone Tracker App MEAN",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+    "dependencies": {
+        "express" : "~4.5.1",
+        "mongoose" : "~3.8.0",
+        "body-parser" : "~1.4.2",
+        "method-override" : "~2.0.2",
+        "passport": "~0.3.0",
+        "passport-local": "~1.0.0",
+        "bcrypt-nodejs" : "*",
+        "connect-flash" : "*",
+        "express-session": "*",
+        "cookie-parser" : "*" 
+        },
+  "author": "",
+  "license": "ISC"
+}

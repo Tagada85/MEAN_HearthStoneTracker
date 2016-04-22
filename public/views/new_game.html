@@ -1,0 +1,54 @@
+<div ng-controller="gameCtrl">
+	<h4>Add a game</h4>
+	<div id="message"></div>
+	<span>Class played:</span>
+
+	<select name="hero_played" ng-model="formGame.hero_played" >
+		<option disabled selected value="">--Choose your Hero--</option>
+		<option ng-repeat="hero in heroes" value="{{hero.name}}">{{hero.name}}</option>
+	</select>
+	<br><br>
+	<span>Class Opp:</span>
+
+	<select name="hero_opp" ng-model="formGame.hero_opp">
+		<option disabled selected value="">--Choose Opponent Hero--</option>
+		<option ng-repeat="hero in heroes" value="{{ hero.name }}">{{ hero.name }}</option>
+	</select>
+	<br><br>
+	<span>Deck Used:</span>
+	<select name="deck_used" ng-model="formGame.deck_used" >
+		<option disabled selected value="">--Choose a Deck--</option>
+		<option ng-repeat="deck in decks" value="{{deck.deck_name}}"> {{deck.deck_name}}</option>
+	</select>
+	<br><br>
+	Outcome:
+	<input type="radio" ng-model="formGame.outcome" name="outcome" value="won"> Won
+	<input type="radio" ng-model="formGame.outcome" name="outcome" value="lost"> Lost
+	<br><br />
+	<button type="submit" ng-click="createGame()"> Add Game</button>
+
+	<h4>Last games :</h4>
+
+	<table class="display_data" >
+			<thead>
+				<th>Class Played</th>
+				<th>Deck Used</th>
+				<th>Class Opponent</th>
+				<th>Outcome</th>
+				<th>ID</th>
+			</thead>
+			<tbody ng-repeat="game in games track by $index">
+				<tr>
+					<td>{{ game.hero_played}}</td>
+					<td>{{ game.deck_used}}</td>
+					<td>{{ game.hero_opponent}}</td>
+					<td>{{ game.outcome}}</td>
+					<td>
+						{{game.user_id}}
+					</td>
+					<td><button ng-click="deleteGame(game._id)">Delete Game</button></td>
+				</tr>
+			</tbody>
+		</table>
+
+</div>

@@ -1,0 +1,16 @@
+footer{
+	clear: both;
+	border-top: 2px solid $btn-color;
+	text-align: center;
+	.contact-info li{
+		display: inline-block;
+		margin: 20px 5%;
+	}
+	.contact-info a {
+		padding: 20px;
+	}
+}
+
+.fa {
+	color: black;
+}

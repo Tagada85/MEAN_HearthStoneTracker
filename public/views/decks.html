@@ -1,0 +1,29 @@
+<div ng-controller="decksCtrl">
+	<h4>Add a deck:</h4>
+	<div id="message"></div>
+	<label for='deck_name'>Deck Name:
+		<input type="text" name="deck_name" id="deck_name" ng-model="deckForm.deck_name">
+	</label>
+	<br><br>
+	Class Name:
+	<select name="hero" ng-model="deckForm.hero">
+
+		<option ng-repeat="hero in heroes" value="{{ hero.name }}">{{ hero.name }}</option>
+	</select>
+	<br><br>
+	<button type="submit" ng-click="addDeck()">Add deck</button>
+	<h3>Existing Decks: </h3>
+	<table class="display_data">
+		<thead>
+			<th>Deck Name</th>
+			<th>Hero</th>
+		</thead>
+		<tbody>
+			<tr ng-repeat="deck in decks">
+				<td>{{deck.deck_name}}</td>
+				<td>{{deck.hero_name}}</td>
+			</tr>
+		</tbody>
+	</table>
+
+</div>

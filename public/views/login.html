@@ -1,0 +1,11 @@
+<div class="main-content" ng-controller="loginCtrl">
+	<div id="message"></div>
+	<h3>Log In:</h3>
+	<label for='username'> Username:</label>
+		<input type="text" name="username" id="username" ng-model="loginForm.username">
+	<br><br>
+	<label for='password'> Password: </label>
+		<input type="password" name="password" id="password"  ng-model="loginForm.password">
+
+	<button  ng-click='verifyLogin()' class="loginBtn">Log In</button>
+</div>

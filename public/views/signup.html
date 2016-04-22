@@ -1,0 +1,15 @@
+<div class="main-content" ng-controller="loginCtrl">
+	<div id="message"></div>
+	<label for="username">Username:</label>
+		<input type="username" name="username" id="username" ng-model="signupForm.username">
+	<br><br>
+	<label for="email">Email: </label>
+	<input type="email" id="email" name="email" ng-model="signupForm.email">
+	<br /><br />
+	<label for="password">Password:	</label>
+		<input type="password" name="password" id="password" ng-model="signupForm.password">
+	<br><br>
+	<button id="userSubmit" ng-click="signupSubmit()">Create Account</button>
+
+
+</div>

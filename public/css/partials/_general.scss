@@ -1,0 +1,139 @@
+ul {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+}
+
+/* Colors
+===================== */
+
+$brown-color: #D5B178;
+$btn-color: #770F07;
+$btn-text: #FCD144;
+$purple-btn: #A420BD;
+
+
+
+ body {
+ 	max-width: 90%;
+ 	margin: 0 auto;
+ 	background-color: $brown-color;
+ 	text-align:center;
+ }
+
+ .main-content {
+ 	max-width: 80%;
+ 	margin: 30px auto;
+	padding: 10px 0;
+ 	text-align: center;
+ }
+
+ .main-content::before {
+ 	content: "";
+ 	display: table;
+ 	clear: both;
+ }
+
+ .btn {
+ 	float: left;
+ 	padding: 15px;
+ 	background-color: $purple-btn;
+ 	color: white;
+ 	border-radius: 10px;
+ 	font-size: 20px;
+ 	margin: 5px;
+ 	&:hover{
+ 		background-color: lighten($purple-btn, 5%);
+ 	}
+ }
+
+ .game-btn {
+ 	background-color: $btn-color;
+ 	&:hover{
+ 		background-color: lighten($btn-color, 5%);
+ 	}
+ }
+
+.deck_list::before,
+.form_container::before {
+ 	content: "";
+ 	display: table;
+ 	clear: both;
+ }
+
+ .message {
+ 	display: inline-block;
+ 	border: 2px solid black;
+ 	padding: 15px;
+ 	margin: 15px;
+ }
+
+ .username{
+	 float:left;
+ }
+
+ #message {
+ 	margin: 10px auto;
+ 	border: 2px solid red;
+ 	padding: 15px;
+ 	visibility: hidden;
+ 	text-align: center;
+ }
+
+ label{
+    display: inline-block;
+    float: left;
+    clear: left;
+	width: 40%;
+    text-align: right;
+	line-height: 50px;
+}
+button {
+	display: block;
+	clear: both;
+	margin: 20px auto 20px auto;
+	color: #fff;
+	background-color: $btn-color;
+	box-shadow: 0 6px darken($btn-color, 10%);
+	border-radius: 0 0 5px 5px;
+	cursor: pointer;
+	border: none;
+	padding: 10px 30px;
+	text-transform: uppercase;
+	font-size: 20px;
+	font-weight: bolder;
+	outline: none;
+	&:hover{
+		position:relative;
+		top:2px;
+		box-shadow: 0 4px darken($btn-color, 10%);
+	}
+}
+
+
+input {
+	display: inline-block;
+	margin-bottom: 20px;
+	float: left;
+	padding: 15px;
+	font-size: 18px;
+	border: solid 1px #fff;
+	box-shadow: inset 1px 1px 2px 0 #707070;
+	transition: box-shadow 0.3s;
+	&:focus{
+		box-shadow: inset 1px 1px 2px 0 #c9c9c9;
+	}
+}
+
+
+
+ .display_data {
+ 	border-collapse: collapse;
+ 	margin: 10px auto;
+ 	font-size: 18px;
+ 	td, tr, th {
+ 		border: 1px solid black;
+ 		padding: 10px;
+ 	}
+ }

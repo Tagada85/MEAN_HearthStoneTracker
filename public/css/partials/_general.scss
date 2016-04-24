@@ -88,6 +88,8 @@ $purple-btn: #A420BD;
 	width: 40%;
     text-align: right;
 	line-height: 50px;
+	font-size: 22px;
+	font-weight: bolder;
 }
 button {
 	display: block;
@@ -112,7 +114,7 @@ button {
 }
 
 
-input {
+input, select {
 	display: inline-block;
 	margin-bottom: 20px;
 	float: left;
@@ -126,7 +128,9 @@ input {
 	}
 }
 
-
+.outcome {
+	display: ineline-block;
+}
 
  .display_data {
  	border-collapse: collapse;

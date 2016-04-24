@@ -1,18 +1,13 @@
 <div class="main-content"  ng-controller="statsCtrl">
 	<p>Filters:</p>
-	<span>By Hero:</span>
+	<label>By Hero:</label>
 	<select ng-model="filtering.hero" >
 		<option value="" selected>--Select a Hero--</option>
 		<option ng-repeat="hero in heroes" value="{{hero.name}}">{{hero.name}}</option>
 	</select>
-	<span>By Deck:</span>
-	<select ng-model="filtering.deck" >
-		<option ng-repeat="deck in decks" value="{{ deck.deck_name }}">{{ deck.deck_name }}</option>
-	</select>
 	<br><br>
 	<button ng-click='filter()'>Filter</button>
 
-	{{ (stats | filter:{hero_played: 'Mage'}).length}}
 	<table class="display_data" ng-show="table_hero">
 		<thead>
 			<th>Against</th>
@@ -28,7 +23,7 @@
 				<td>{{ (stats | filter: {hero_opponent: hero.name, outcome: 'won'}).length }}</td>
 				<td>{{ (stats | filter: {hero_opponent: hero.name, outcome: 'lost'}).length }}</td>
 				<td>{{ (stats | filter: {hero_opponent: hero.name, outcome: 'won'}).length /  (stats | filter: {hero_opponent: hero.name}).length * 100  }} %</td>
-				
+
 			</tr>
 		</tbody>
 	</table>
@@ -43,12 +38,12 @@
 		</thead>
 		<tbody >
 			<tr ng-repeat="hero in heroes">
-				<td>{{ hero.hero_name }}</td>
-				<td>{{ (stats | filter: {deck_used: '$scope.filtering.deck', hero_opp: hero.name}).length }}</td>
-				<td>{{ (stats | filter: {deck_used: '$scope.filtering.deck' ,hero_opp: hero.name, outcome: 'won'}).length }}</td>
-				<td>{{ (stats | filter: {deck_used: '$scope.filtering.deck' , hero_opp: hero.name, outcome: 'lost'}).length }}</td>
-				<td>{{ (stats | filter: {deck_used: '$scope.filtering.deck' ,hero_opp: hero.name, outcome: 'won'}).length /  (stats | filter: {hero_opp: hero.name,deck_used: '$scope.filtering.deck'}).length * 100  }} %</td>
-				
+				<td>{{ hero.name }}</td>
+				<td>{{ (stats | filter: {deck_used: '$scope.filtering.deck', hero_opponent: hero.name}).length }}</td>
+				<td>{{ (stats | filter: {deck_used: '$scope.filtering.deck' ,hero_opponent: hero.name, outcome: 'won'}).length }}</td>
+				<td>{{ (stats | filter: {deck_used: '$scope.filtering.deck' , hero_opponent: hero.name, outcome: 'lost'}).length }}</td>
+				<td>{{ (stats | filter: {deck_used: '$scope.filtering.deck' ,hero_opponent: hero.name, outcome: 'won'}).length /  (stats | filter: {hero_opponent: hero.name,deck_used: '$scope.filtering.deck'}).length * 100  }} %</td>
+
 			</tr>
 		</tbody>
 	</table>

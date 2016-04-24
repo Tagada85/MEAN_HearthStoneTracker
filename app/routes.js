@@ -87,9 +87,11 @@ heroes.forEach(function(hero, index){
 
         });
 
-        app.get('/filters/:deck', function(req, res){
+        app.get('/filters/:deck/:user_id', function(req, res){
+            console.log(req.params);
             Game.find({
-                deck_used : req.params.deck
+                deck_used : req.params.deck,
+                user_id: req.params.user_id
             },function(err, games){
                 if(err){
                     res.send(err);
@@ -156,7 +158,7 @@ heroes.forEach(function(hero, index){
 
 
         // route to handle delete goes here (app.delete)
-        app.delete('/games/:id', function(req, res){
+        app.delete('/games/:id/:user_id', function(req, res){
             Game.remove({
                 _id: req.params.id
             }, function(err, game){
@@ -164,7 +166,7 @@ heroes.forEach(function(hero, index){
                     res.send(err);
                 }
 
-                Game.find(function(err, games){
+                Game.find({'user_id' : req.params.user_id},function(err, games){
                     if(err){
                         res.send(err);
                     }
@@ -231,7 +233,6 @@ app.post('/login', function(req, res){
             console.log('Error:'+ err);
             res.send(err);
         }
-        console.log(user);
         if(user == null){
             return res.send("Wrong username and/or password");
         }else {

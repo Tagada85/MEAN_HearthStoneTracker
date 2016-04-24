@@ -2,6 +2,7 @@ var hsTracker = angular.module('hsTracker')
 .controller('statsCtrl', function($scope, $http){
 	$scope.table_deck = false;
 	$scope.table_hero = false;
+
 	//get all the heroes
 	$http.get('/heroes')
 		.success(function(data){
@@ -21,7 +22,7 @@ var hsTracker = angular.module('hsTracker')
 
 		$http.get('/session')
 			.success(function(data){
-				$scope.userSession = data;
+				$scope.userSession = data._id;
 			})
 			.error(function(data){
 				console.log('Error: ' + data);
@@ -49,7 +50,7 @@ var hsTracker = angular.module('hsTracker')
 			$scope.table_deck = true;
 			$scope.table_hero = false;
 			//no Hero -> returns games with deck filter
-			$http.get('/filters/' + deck)
+			$http.get('/filters/' + deck + '/' + user_id)
 				.success(function(data){
 					$scope.stats = data;
 				})

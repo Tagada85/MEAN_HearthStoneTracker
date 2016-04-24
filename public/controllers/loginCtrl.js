@@ -23,7 +23,7 @@ var hsTracker = angular.module('hsTracker')
 
 	$http.get('/session')
 		.success(function(data){
-			$scope.userSession = data;
+			$scope.userSession = data._id;
 		})
 		.error(function(data){
 			console.log('Error: ' + data);

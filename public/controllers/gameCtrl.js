@@ -23,7 +23,7 @@ var hsTracker = angular.module('hsTracker')
 		//get user ID
 	$http.get('/session')
 		.success(function(data){
-			$scope.userSession = data;
+			$scope.userSession = data._id;
 		})
 		.error(function(data){
 			console.log('Error: ' + data);
@@ -57,7 +57,7 @@ var hsTracker = angular.module('hsTracker')
 	}
 	//delete a game
 	$scope.deleteGame = function(id){
-		$http.delete('/games/' + id)
+		$http.delete('/games/' + id + '/' + $scope.userSession)
 			.success(function(data){
 				$scope.games = data;
 			})

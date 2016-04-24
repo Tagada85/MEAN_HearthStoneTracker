@@ -1,12 +1,11 @@
 <div ng-controller="decksCtrl">
 	<h4>Add a deck:</h4>
 	<div id="message"></div>
-	<label for='deck_name'>Deck Name:
+	<label for='deck_name'>Deck Name:	</label>
 		<input type="text" name="deck_name" id="deck_name" ng-model="deckForm.deck_name">
-	</label>
 	<br><br>
-	Class Name:
-	<select name="hero" ng-model="deckForm.hero">
+	<label for='className'>Class Name:</label>
+	<select name="hero" ng-model="deckForm.hero" id='className'>
 
 		<option ng-repeat="hero in heroes" value="{{ hero.name }}">{{ hero.name }}</option>
 	</select>
